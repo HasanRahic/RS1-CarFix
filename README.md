@@ -62,18 +62,60 @@ This project is developed as part of the **RS1 project** (Faculty of Information
 
 ## 📁 Project Structure
 
+### 🖥️ Backend (ASP.NET Core API)
+
 backend/
-├── API/ (controllers, program setup, middleware)
-├── Core/ (entities, interfaces, specifications)
-├── Infrastructure/ (database, repositories)
+├── API/
+│   ├── Controllers/              # Product, Account, Basket, Orders, Payments
+│   ├── Extensions/               # Application service configs
+│   ├── Middleware/               # Global error handling, exception middleware
+│   ├── DTOs/                     # Data transfer objects
+│   ├── Helpers/                  # Pagination, Cloudinary helper
+│   └── Program.cs                # App configuration & pipeline
+│
+├── Core/
+│   ├── Entities/                 # Product, Brand, Type, Basket, Order, User
+│   ├── Interfaces/               # Repository, TokenService, PaymentService...
+│   ├── Specifications/           # Query filtering, sorting, pagination spec
+│   └── Models/                   # Pagination & response models
+│
+├── Infrastructure/
+│   ├── Data/                     # DbContext, seed, migrations
+│   ├── Identity/                 # User manager, role manager
+│   ├── Services/                 # Cloudinary, Payment (Stripe), Token service
+│   ├── Repositories/             # Generic repository implementation
+│   └── Config/                   # Entity type configurations
+
+### 🌐 Frontend (Angular)
 
 frontend/
 ├── client/
-├── src/app/
-├── features/ (account, products, shop)
-├── shared/ (components, models)
-├── core/ (interceptors, services)
-├── public/
+│   ├── src/
+│   │   ├── app/
+│   │   │   ├── core/             
+│   │   │   │   ├── services/         # ProductService, AccountService, CartService...
+│   │   │   │   ├── interceptors/     # JWT interceptor
+│   │   │   │
+│   │   │   ├── shared/               
+│   │   │   │   ├── components/       # Reusable UI components (order summary, etc.)
+│   │   │   │   └── models/           # Interfaces (Product, Pagination, ShopParams...)
+│   │   │   │
+│   │   │   ├── features/             
+│   │   │   │   ├── account/          # Login, Register
+│   │   │   │   ├── products/         # Admin CRUD
+│   │   │   │   ├── shop/             # Product listing, search, filters
+│   │   │   │   ├── cart/             # Cart page components
+│   │   │   │   └── checkout/         # Checkout page
+│   │   │   │
+│   │   │   ├── layout/               # Header, navigation, footer
+│   │   │   └── app.config.ts         # Client app configuration
+│   │   │
+│   │   ├── assets/                   # Global images/icons
+│   │   ├── styles.scss               # Global styles
+│   │   └── index.html
+│   │
+│   ├── package.json
+│   └── angular.json
 
 
 ---
