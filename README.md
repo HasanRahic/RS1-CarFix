@@ -64,6 +64,7 @@ This project is developed as part of the **RS1 project** (Faculty of Information
 
 ### 🖥️ Backend (ASP.NET Core API)
 
+```
 backend/
 ├── API/
 │   ├── Controllers/              # Product, Account, Basket, Orders, Payments
@@ -85,9 +86,11 @@ backend/
 │   ├── Services/                 # Cloudinary, Stripe, Token service
 │   ├── Repositories/             # Generic repository implementation
 │   └── Config/                   # Entity type configurations
+```
 
 ### 🌐 Frontend (Angular)
 
+```
 frontend/
 ├── client/
 │   ├── src/
@@ -116,7 +119,7 @@ frontend/
 │   │
 │   ├── package.json
 │   └── angular.json
-
+```
 
 ---
 
