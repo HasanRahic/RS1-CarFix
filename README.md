@@ -68,21 +68,21 @@ backend/
 ├── API/
 │   ├── Controllers/              # Product, Account, Basket, Orders, Payments
 │   ├── Extensions/               # Application service configs
-│   ├── Middleware/               # Global error handling, exception middleware
+│   ├── Middleware/               # Global error handling middleware
 │   ├── DTOs/                     # Data transfer objects
-│   ├── Helpers/                  # Pagination, Cloudinary helper
-│   └── Program.cs                # App configuration & pipeline
+│   ├── Helpers/                  # Pagination helpers, Cloudinary helper
+│   └── Program.cs                # App configuration & middleware pipeline
 │
 ├── Core/
-│   ├── Entities/                 # Product, Brand, Type, Basket, Order, User
+│   ├── Entities/                 # Product, Brand, Type, Basket, Order, User...
 │   ├── Interfaces/               # Repository, TokenService, PaymentService...
-│   ├── Specifications/           # Query filtering, sorting, pagination spec
-│   └── Models/                   # Pagination & response models
+│   ├── Specifications/           # Filtering, sorting, pagination spec classes
+│   └── Models/                   # Pagination & generic response models
 │
 ├── Infrastructure/
 │   ├── Data/                     # DbContext, seed, migrations
-│   ├── Identity/                 # User manager, role manager
-│   ├── Services/                 # Cloudinary, Payment (Stripe), Token service
+│   ├── Identity/                 # ASP.NET Identity user/role management
+│   ├── Services/                 # Cloudinary, Stripe, Token service
 │   ├── Repositories/             # Generic repository implementation
 │   └── Config/                   # Entity type configurations
 
@@ -92,25 +92,25 @@ frontend/
 ├── client/
 │   ├── src/
 │   │   ├── app/
-│   │   │   ├── core/             
+│   │   │   ├── core/
 │   │   │   │   ├── services/         # ProductService, AccountService, CartService...
 │   │   │   │   ├── interceptors/     # JWT interceptor
 │   │   │   │
-│   │   │   ├── shared/               
-│   │   │   │   ├── components/       # Reusable UI components (order summary, etc.)
+│   │   │   ├── shared/
+│   │   │   │   ├── components/       # Order summary, form controls, reusable UI
 │   │   │   │   └── models/           # Interfaces (Product, Pagination, ShopParams...)
 │   │   │   │
-│   │   │   ├── features/             
+│   │   │   ├── features/
 │   │   │   │   ├── account/          # Login, Register
-│   │   │   │   ├── products/         # Admin CRUD
-│   │   │   │   ├── shop/             # Product listing, search, filters
-│   │   │   │   ├── cart/             # Cart page components
-│   │   │   │   └── checkout/         # Checkout page
+│   │   │   │   ├── products/         # Admin CRUD (create/update/delete)
+│   │   │   │   ├── shop/             # Product listing, search, filters, sorting
+│   │   │   │   ├── cart/             # Shopping cart UI
+│   │   │   │   └── checkout/         # Checkout with payment flow
 │   │   │   │
-│   │   │   ├── layout/               # Header, navigation, footer
-│   │   │   └── app.config.ts         # Client app configuration
+│   │   │   ├── layout/               # Header, navigation
+│   │   │   └── app.config.ts         # Application global configuration
 │   │   │
-│   │   ├── assets/                   # Global images/icons
+│   │   ├── assets/                   # Images, icons
 │   │   ├── styles.scss               # Global styles
 │   │   └── index.html
 │   │
